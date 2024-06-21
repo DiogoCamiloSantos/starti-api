@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image to EC2
 on:
   push:
     branches:
-      - main
+      - create-docker-image
 
 jobs:
   build:
@@ -24,9 +24,9 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t my-docker-image:latest .
-        docker tag my-docker-image:latest ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
+        docker build -t ${{ secrets.DOCKER_IMAGENAME }}:latest .
+        docker tag ${{ secrets.DOCKER_IMAGENAME }}:latest ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGENAME }}:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGENAME }}:latest
 
   deploy:
     needs: build
@@ -44,7 +44,7 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         port: 22
         script: |
-          docker pull ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
-          docker stop my-docker-container || true
-          docker rm my-docker-container || true
-          docker run -d --name my-docker-container -p 80:80 ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGENAME }}:latest
+          docker stop ${{ secrets.DOCKER_IMAGENAME }}-container || true
+          docker rm ${{ secrets.DOCKER_IMAGENAME }}-container || true
+          docker run -d --name ${{ secrets.DOCKER_IMAGENAME }}-container -p 80:80 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGENAME }}:latest
