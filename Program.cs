@@ -99,7 +99,7 @@ app.MapControllers();
 app.UseDeveloperExceptionPage();
 app.UseSwagger();
 app.UseSwaggerUI(c => {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Starti API V3");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Starti API V3.1");
     c.RoutePrefix = string.Empty;
 });  
 
