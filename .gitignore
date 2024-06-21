@@ -9,6 +9,8 @@
 *.appxbundle
 *.msix
 *.msixbundle
+sshkey
+sshkey.pub
 
 # Build directories
 bin/

@@ -1,6 +1,6 @@
 namespace StartiApi.Application.Interfaces
 {
-   public interface IUserService
+   public interface IAuthenticationService
     {
         string Authenticate(string username, string password, string client);
     }

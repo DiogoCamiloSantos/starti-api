@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StartiApi.Application.Interfaces;
+using StartiApi.Domain.Models;
 
 namespace StartiApi.Presentation.Controllers
 {    
@@ -8,16 +9,16 @@ namespace StartiApi.Presentation.Controllers
     [ApiController]
     public class AuthAppController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IAuthenticationService _userService;
 
-        public AuthAppController(IUserService userService)
+        public AuthAppController(IAuthenticationService userService)
         {
             _userService = userService;
         }
 
         [HttpPost("login")]
         [AllowAnonymous]
-        public IActionResult Login([FromBody] UserModel user)
+        public IActionResult Login([FromBody] UserLogin user)
         {
             var token = _userService.Authenticate(user.Username, user.Password, "app");
 

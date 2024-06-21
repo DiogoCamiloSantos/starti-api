@@ -4,12 +4,25 @@ using StartiApi.Application.Interfaces;
 using System.Text;
 using StartiApi.Application.Services;
 using System.Reflection;
+using StartiApi.Repositories;
+using StartiApi.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("AllowAll", 
+        builder => builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader());
+});
+
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddSingleton<IUserProfileRepository, UserProfileRepository>();
+builder.Services.AddTransient<IUserProfileService, UserProfileService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -17,6 +30,17 @@ builder.Services.AddSwaggerGen();
 
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
+
+builder.WebHost.ConfigureKestrel((context, serverOptions) =>
+{
+    var kestrelSection = context.Configuration.GetSection("Kestrel");
+
+    serverOptions.Configure(kestrelSection)
+        .Endpoint("HTTPS", listenOptions =>
+        {
+            // ...
+        });
+});
 
 builder.Services.AddAuthentication(options =>
 {
@@ -51,6 +75,7 @@ builder.Services.AddAuthorization(options =>
     });
 });
 
+
 builder.Services.AddSwaggerGen(c => 
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -60,21 +85,23 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Starti API V1"));
-
-}
-
 app.UseRouting();
+
+app.UseCors("AllowAll");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHttpsRedirection();
 
 app.MapControllers();
+
+app.UseDeveloperExceptionPage();
+app.UseSwagger();
+app.UseSwaggerUI(c => {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Starti API V2");
+    c.RoutePrefix = string.Empty;
+});  
 
 app.MapGet("/", c => 
 {

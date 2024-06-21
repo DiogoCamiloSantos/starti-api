@@ -8,11 +8,11 @@ using System.Text;
 
 namespace StartiApi.Application.Services
 {
-    public class UserService : IUserService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly IConfiguration _config;
 
-        public UserService(IConfiguration config)
+        public AuthenticationService(IConfiguration config)
         {
             _config = config;
         }
