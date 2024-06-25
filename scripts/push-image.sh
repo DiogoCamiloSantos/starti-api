@@ -34,10 +34,13 @@ while [[ $# -gt 0 ]]; do
 done
 
 
-docker rm -f ${IMAGE_NAME}_container
+docker rm -f ${IMAGE_NAME}-container
 
 
 docker build -t ${IMAGE_NAME} .
 
+docker tag ${IMAGE_NAME} diogocamilo/${IMAGE_NAME}
 
-docker push -d -p ${PORT}:80 -e ASPNETCORE_URLS=http://+:80 --name ${IMAGE_NAME}_container ${IMAGE_NAME}
+docker push diogocamilo/${IMAGE_NAME}
+
+# docker push -d -p ${PORT}:80 -e ASPNETCORE_URLS=http://+:80 --name ${IMAGE_NAME}-container ${IMAGE_NAME}
