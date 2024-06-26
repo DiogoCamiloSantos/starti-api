@@ -24,10 +24,11 @@ builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddSingleton<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddTransient<IUserProfileService, UserProfileService>();
 
+builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
+builder.Services.AddTransient<IArticleService, ArticleService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
 
