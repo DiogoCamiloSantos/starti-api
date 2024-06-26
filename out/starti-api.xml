@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>starti-api</name>
+    </assembly>
+    <members>
+        <member name="M:StartiApi.Presentation.Controllers.AuthSiteController.Login(UserModel)">
+            <summary>
+            Login pelo site.
+            </summary>
+            <returns>Chave JWT.</returns>
+        </member>
+    </members>
+</doc>

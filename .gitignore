@@ -1,0 +1,48 @@
+# Compiled source files
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.dll.config
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+sshkey
+sshkey.pub
+
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio files
+.vs/
+.vscode/
+.idea/
+
+# Rider files
+.idea/
+
+# ASP.NET Scaffolding
+.scaffolding/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# MacOS files
+.DS_Store
+
