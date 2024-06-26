@@ -80,3 +80,42 @@ Este projeto é o início de uma API RESTful desenvolvida em .NET para gerenciar
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/starti-api.git
+
+Backlog de Curto a Médio Prazo
+Curto Prazo
+Autenticação e Autorização:
+
+Melhorar a segurança da autenticação.
+Implementar registro de novos usuários.
+Validar e gerenciar tokens expirados.
+Gestão de Artigos:
+
+Criar endpoints para CRUD de artigos (Create, Read, Update, Delete).
+Implementar validações e tratamento de erros para operações de CRUD.
+Documentação e Testes:
+
+Integrar Swagger para documentação automática da API.
+Adicionar exemplos de uso dos endpoints na documentação.
+Escrever testes unitários para os serviços e controladores.
+Médio Prazo
+Integração com Banco de Dados:
+
+Definir e implementar a estrutura do banco de dados (SQL Server, MySQL, PostgreSQL, etc.).
+Configurar acesso ao banco de dados na camada de repositório.
+Migrar dados mockados para o banco de dados real.
+Funcionalidades Avançadas:
+
+Implementar busca e filtros nos artigos (por título, autor, data, etc.).
+Adicionar categorias e tags aos artigos para melhor organização e busca.
+Segurança:
+
+Implementar proteção contra ataques comuns (e.g., SQL Injection, XSS).
+Adicionar rate limiting para proteger contra abuso de endpoints e ataques de força bruta.
+Deploy e CI/CD:
+
+Configurar pipeline de CI/CD com GitHub Actions, Azure DevOps, ou similar.
+Automatizar o deploy da API em um ambiente de produção (AWS, Azure, Heroku, etc.).
+Monitoramento e Logging:
+
+Implementar monitoramento de performance e uso da API.
+Configurar logging para capturar e analisar erros e eventos importantes da aplicação.
