@@ -120,7 +120,7 @@ namespace StartiApi.Repositories
             return _userProfiles;
         }
 
-        public UserProfile GetById(string id)
+        public UserProfile GetBy(string id)
         {
             return _userProfiles.FirstOrDefault(up => up.Id == id);
         }
@@ -132,7 +132,7 @@ namespace StartiApi.Repositories
 
         public void Update(UserProfile userProfile)
         {
-            var existingUserProfile = GetById(userProfile.Id);
+            var existingUserProfile = GetBy(userProfile.Id);
             if (existingUserProfile != null)
             {
                 existingUserProfile.FirstName = userProfile.FirstName;
@@ -144,11 +144,24 @@ namespace StartiApi.Repositories
 
         public void Delete(string id)
         {
-            var userProfile = GetById(id);
+            var userProfile = GetBy(id);
             if (userProfile != null)
             {
                 _userProfiles.Remove(userProfile);
             }
+        }
+
+        public Task<IEnumerable<UserProfile>> GetAsyncBy(string query)
+        {
+            IEnumerable<UserProfile> result = _userProfiles;
+
+            if (!string.IsNullOrEmpty(query))
+                result = _userProfiles.Where(user => user.FirstName.ToLower().Contains(query.ToLower()));
+            
+            if (!string.IsNullOrEmpty(query))
+                result = _userProfiles.Where(user => user.Email.ToLower().Contains(query.ToLower()));
+            
+            return Task.FromResult(result);
         }
     }
 }

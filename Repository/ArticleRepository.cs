@@ -104,4 +104,9 @@ public class ArticleRepository : IArticleRepository
 
         return Task.FromResult((IEnumerable<Article>)articles);
     }
+
+    public Task<IEnumerable<Article>> GetAsyncBy(string name, string email = "")
+    {
+        throw new NotImplementedException();
+    }
 }

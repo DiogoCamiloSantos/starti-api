@@ -6,7 +6,8 @@ namespace StartiApi.Repositories
     public interface IUserProfileRepository
     {
         IEnumerable<UserProfile> GetAll();
-        UserProfile GetById(string id);
+        UserProfile GetBy(string id);
+        Task<IEnumerable<UserProfile>> GetAsyncBy(string search);
         void Add(UserProfile userProfile);
         void Update(UserProfile userProfile);
         void Delete(string id);

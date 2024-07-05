@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StartiApi.Domain.Models;
 using StartiApi.Services;
+using StartiApi.Presentation.Presenters.DTO;
 
 namespace StartiApi.Controllers
 {
@@ -24,53 +25,15 @@ namespace StartiApi.Controllers
             return Ok(userProfiles);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<UserProfile> GetById(string id)
-        {
-            var userProfile = _userProfileService.GetById(id);
-            if (userProfile == null)
-            {
-                return NotFound();
-            }
-            return Ok(userProfile);
-        }
-
         [HttpPost]
-        public ActionResult<UserProfile> Add(UserProfile userProfile)
+        public async Task<ActionResult<IEnumerable<UserProfile>>> Search([FromBody] UserProfileSearchDTO userProfileDTO)
         {
-            _userProfileService.Add(userProfile);
-            return CreatedAtAction(nameof(GetById), new { id = userProfile.Id }, userProfile);
-        }
+            var userProfiles = await _userProfileService.GetAsyncBy(userProfileDTO.Search);
 
-        [HttpPut("{id}")]
-        public IActionResult Update(string id, UserProfile userProfile)
-        {
-            if (id != userProfile.Id)
-            {
-                return BadRequest();
-            }
-
-            var existingUserProfile = _userProfileService.GetById(id);
-            if (existingUserProfile == null)
-            {
+            if (userProfiles == null)
                 return NotFound();
-            }
 
-            _userProfileService.Update(userProfile);
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
-        {
-            var userProfile = _userProfileService.GetById(id);
-            if (userProfile == null)
-            {
-                return NotFound();
-            }
-
-            _userProfileService.Delete(id);
-            return NoContent();
+            return Ok(userProfiles);
         }
     }
 }

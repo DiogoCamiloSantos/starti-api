@@ -6,7 +6,8 @@ namespace StartiApi.Services
     public interface IUserProfileService
     {
         IEnumerable<UserProfile> GetAll();
-        UserProfile GetById(string id);
+        Task<IEnumerable<UserProfile>> GetAsyncBy(string search);
+        UserProfile GetBy(string id);
         void Add(UserProfile userProfile);
         void Update(UserProfile userProfile);
         void Delete(string id);

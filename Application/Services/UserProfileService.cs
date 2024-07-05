@@ -18,9 +18,9 @@ namespace StartiApi.Services
             return _userProfileRepository.GetAll();
         }
 
-        public UserProfile GetById(string id)
+        public UserProfile GetBy(string id)
         {
-            return _userProfileRepository.GetById(id);
+            return _userProfileRepository.GetBy(id);
         }
 
         public void Add(UserProfile userProfile)
@@ -36,6 +36,11 @@ namespace StartiApi.Services
         public void Delete(string id)
         {
             _userProfileRepository.Delete(id);
+        }
+
+        public Task<IEnumerable<UserProfile>> GetAsyncBy(string search)
+        {
+            return _userProfileRepository.GetAsyncBy(search);
         }
     }
 }
