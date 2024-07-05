@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using StartiApi.Domain.Models;
+using StartiApi.Domain.Domain.Entities;
 
 public class ArticlePresenter
 {

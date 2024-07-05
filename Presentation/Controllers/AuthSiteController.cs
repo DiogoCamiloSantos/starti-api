@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StartiApi.Application.Interfaces;
-using StartiApi.Domain.Models;
+using StartiApi.Domain.Domain.Entities;
 
 namespace StartiApi.Presentation.Controllers
 {
@@ -9,22 +9,18 @@ namespace StartiApi.Presentation.Controllers
     [ApiController]
     public class AuthSiteController : ControllerBase
     {
-        private readonly IAuthenticationService _userService;
+        private readonly IJwtService jwtService;
 
-        public AuthSiteController(IAuthenticationService userService)
+        public AuthSiteController(IJwtService jwtService)
         {
-            _userService = userService;
+            jwtService = jwtService;
         }
 
-        /// <summary>
-        /// Login pelo site.
-        /// </summary>
-        /// <returns>Chave JWT.</returns>
         [HttpPost("login")]
         [AllowAnonymous]
         public IActionResult Login([FromBody] UserLogin user)
         {
-            var token = _userService.Authenticate(user.Username, user.Password, "site");
+            var token = jwtService.GenerateToken(user.Username, "app");
 
             if (token == null)
                 return Unauthorized();

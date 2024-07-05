@@ -24,6 +24,8 @@ builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 builder.Services.AddSingleton<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddTransient<IUserProfileService, UserProfileService>();
 
+builder.Services.AddScoped<IJwtService, JwtService>();
+
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<IArticleService, ArticleService>();
 
@@ -77,7 +79,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 
-builder.Services.AddSwaggerGen(c => 
+builder.Services.AddSwaggerGen(c =>
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -88,8 +90,6 @@ var app = builder.Build();
 
 app.UseRouting();
 
-app.UseCors("AllowAll");
-
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -99,10 +99,11 @@ app.MapControllers();
 
 app.UseDeveloperExceptionPage();
 app.UseSwagger();
+
 app.UseSwaggerUI(c => {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Starti API V1");
-    c.RoutePrefix = string.Empty;
-});  
+    c.RoutePrefix = "";
+});
 
 app.MapGet("/", c => 
 {

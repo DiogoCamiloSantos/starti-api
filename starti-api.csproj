@@ -14,9 +14,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.0" />
  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StartiApi.Application\StartiApi.Application.csproj" />
+    <ProjectReference Include="..\StartiApi.Domain\StartiApi.Domain.csproj" />
+    <ProjectReference Include="..\StartiApi.Infrastructure\StartiApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\StartiApi.Persistence\StartiApi.Persistence.csproj" />
+  </ItemGroup>
 
 </Project>
