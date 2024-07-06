@@ -7,11 +7,11 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 
-public class JwtService : IJwtService
+public class AuthenticationService : IAuthenticationService
 {
     private readonly IConfiguration _config;
 
-    public JwtService(IConfiguration config)
+    public AuthenticationService(IConfiguration config)
     {
         _config = config;
     }

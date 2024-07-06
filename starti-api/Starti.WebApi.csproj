@@ -17,10 +17,10 @@
  </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StartiApi.Application\StartiApi.Application.csproj" />
-    <ProjectReference Include="..\StartiApi.Domain\StartiApi.Domain.csproj" />
-    <ProjectReference Include="..\StartiApi.Infrastructure\StartiApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\StartiApi.Persistence\StartiApi.Persistence.csproj" />
+    <ProjectReference Include="..\StartiApi.Application\Starti.Application.csproj" />
+    <ProjectReference Include="..\StartiApi.Domain\Starti.Domain.csproj" />
+    <ProjectReference Include="..\StartiApi.Infrastructure\Starti.Infrastructure.csproj" />
+    <ProjectReference Include="..\StartiApi.Persistence\Starti.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

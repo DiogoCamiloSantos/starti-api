@@ -20,11 +20,11 @@ builder.Services.AddCors(options =>
                             .AllowAnyHeader());
 });
 
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<StartiApi.Application.Interfaces.IAuthenticationService, StartiApi.Application.Services.AuthenticationService>();
 builder.Services.AddSingleton<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddTransient<IUserProfileService, UserProfileService>();
 
-builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 builder.Services.AddTransient<IArticleRepository, ArticleRepository>();
 builder.Services.AddTransient<IArticleService, ArticleService>();

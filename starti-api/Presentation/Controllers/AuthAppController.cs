@@ -9,9 +9,9 @@ namespace StartiApi.Presentation.Controllers
     [ApiController]
     public class AuthAppController : ControllerBase
     {
-        private readonly IJwtService jwtService;
+        private readonly IAuthenticationService jwtService;
 
-        public AuthAppController(IJwtService jwtService)
+        public AuthAppController(IAuthenticationService jwtService)
         {
             jwtService = jwtService;
         }
