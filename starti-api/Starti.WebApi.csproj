@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>starti_api</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+ </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StartiApi.Application\Starti.Application.csproj" />
+    <ProjectReference Include="..\StartiApi.Domain\Starti.Domain.csproj" />
+    <ProjectReference Include="..\StartiApi.Infrastructure\Starti.Infrastructure.csproj" />
+    <ProjectReference Include="..\StartiApi.Persistence\Starti.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
