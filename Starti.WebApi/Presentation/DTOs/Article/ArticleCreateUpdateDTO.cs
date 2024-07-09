@@ -1,4 +1,4 @@
-﻿namespace starti_api.Presentation.Presenters.DTOs.Article
+﻿namespace Starti.WebApi.Presentation.Presenters.DTOs.Article
 {
     public class ArticleCreateUpdateDTO
     {

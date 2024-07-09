@@ -1,4 +1,4 @@
-namespace starti_api.Presentation.DTOs.UserProfile
+namespace Starti.WebApi.Presentation.DTOs.UserProfile
 {
     public class UserProfileSearchDTO
     {

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using starti_api.Presentation.Presenters.DTOs.Article;
+using Starti.WebApi.Presentation.Presenters.DTOs.Article;
 
 [ApiController]
 [Route("api/[controller]")]
