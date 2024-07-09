@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
-    <ProjectReference Include="..\StartiApi.Domain\Starti.Domain.csproj" />
-    <ProjectReference Include="..\StartiApi.Persistence\Starti.Persistence.csproj" />
+    <ProjectReference Include="..\Starti.Domain\Starti.Domain.csproj" />
+    <ProjectReference Include="..\Starti.Persistence\Starti.Persistence.csproj" />
  </ItemGroup>
 
 </Project>
