@@ -1,19 +1,35 @@
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using StartiApi.Domain.Domain.Entities;
+using Starti.Domain.Entities;
 
 public class ArticlePresenter
 {
     public static IEnumerable<object> Present(IEnumerable<Article> articles)
     {
-        return articles.Select(article => new
+        return articles.Select(article => ToDto(article));
+    }
+    public static object ToDto(Article article)
+    {
+        return new
         {
             article.Id,
             article.Title,
             article.Content,
             article.Author,
-            CreatedAt = article.CreatedAt.ToString("yyyy-MM-dd HH:mm:ss"),
-            UpdatedAt = article.UpdatedAt.ToString("yyyy-MM-dd HH:mm:ss")
-        });
+            CreatedAt = article.CreatedAt.ToString(),
+            UpdatedAt = article.UpdatedAt.ToString()
+        };
+    }
+
+    public static Article FromDto(object dto)
+    {
+        var dtoObj = (dynamic)dto;
+        return new Article
+        {
+            Title = dtoObj.title,
+            Content = dtoObj.content,
+            Author = dtoObj.author
+        };
     }
 }

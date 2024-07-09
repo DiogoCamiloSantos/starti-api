@@ -1,4 +1,4 @@
-namespace StartiApi.Domain.Domain.Entities
+namespace Starti.Domain.Entities
 {
     public class UserLogin
     {

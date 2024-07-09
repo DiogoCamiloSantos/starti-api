@@ -1,6 +1,7 @@
-using StartiApi.Domain.Domain.Entities;
+using Starti.Domain.Entities;
 
 public interface IArticleService
 {
-    Task<IEnumerable<Article>> GetAsync();
+    Task<IEnumerable<Article>> GetAllAsync();
+    Task AddManyAsync(IEnumerable<Article> articles);
 }

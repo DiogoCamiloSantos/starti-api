@@ -1,12 +1,12 @@
 using Microsoft.Extensions.Configuration;
-using StartiApi.Application.Interfaces;
+using Starti.Application.Application.Services.interfaces;
 using System;
 using System.Security.Claims;
 using System.Text;
 
 namespace StartiApi.Application.Services
 {
-    public class AuthenticationService : IAuthenticationService
+    internal class AuthenticationService : IAuthenticationService
     {
         private readonly IConfiguration _config;
 

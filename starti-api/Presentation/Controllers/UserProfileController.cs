@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StartiApi.Services;
-using StartiApi.Presentation.Presenters.DTO;
-using StartiApi.Domain.Domain.Entities;
+using starti_api.Presentation.DTOs.UserProfile;
+using Starti.Domain.Entities;
 
 namespace StartiApi.Controllers
 {

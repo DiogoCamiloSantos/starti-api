@@ -1,6 +1,5 @@
 using System.Security.Claims;
 using System.Text;
-using StartiApi.Application.Interfaces;
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;

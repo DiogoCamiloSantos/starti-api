@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using StartiApi.Domain.Domain.Entities;
+using Starti.Domain.Entities;
+using StartiApi.Repositories.Interfaces;
 
 namespace StartiApi.Repositories
 {
-    public class UserProfileRepository : IUserProfileRepository 
+    internal class UserProfileRepository : IUserProfileRepository
     {
         private readonly List<UserProfile> _userProfiles;
 

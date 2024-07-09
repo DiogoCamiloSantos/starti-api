@@ -1,19 +1,25 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using StartiApi.Domain.Domain.Entities;
+using Starti.Domain.Entities;
 using StartiApi.Repositories;
+using StartiApi.Repositories.Interfaces;
 
 public class ArticleService : IArticleService
 {
-    private readonly IArticleRepository articleRepository;
+    internal readonly IArticleRepository articleRepository;
 
     public ArticleService(IArticleRepository articleRepository)
     {
         this.articleRepository = articleRepository;
     }
 
-    public Task<IEnumerable<Article>> GetAsync()
+    public Task AddManyAsync(IEnumerable<Article> articles)
     {
-        return articleRepository.GetAsync();
+        return articleRepository.AddManyAsync(articles);
+    }
+
+    public Task<IEnumerable<Article>> GetAllAsync()
+    {
+        return articleRepository.GetAllAsync();
     }
 }

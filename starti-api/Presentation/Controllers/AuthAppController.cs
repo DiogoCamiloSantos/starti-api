@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StartiApi.Application.Interfaces;
-using StartiApi.Domain.Domain.Entities;
+using Starti.Domain.Entities;
 
 namespace StartiApi.Presentation.Controllers
 {
@@ -13,7 +12,7 @@ namespace StartiApi.Presentation.Controllers
 
         public AuthAppController(IAuthenticationService jwtService)
         {
-            jwtService = jwtService;
+            this.jwtService = jwtService;
         }
 
         [HttpPost("login")]

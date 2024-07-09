@@ -11,6 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Presentation\DTOs\NovaPasta1\**" />
+    <Compile Remove="Presentation\DTOs\NovaPasta\**" />
+    <Content Remove="Presentation\DTOs\NovaPasta1\**" />
+    <Content Remove="Presentation\DTOs\NovaPasta\**" />
+    <EmbeddedResource Remove="Presentation\DTOs\NovaPasta1\**" />
+    <EmbeddedResource Remove="Presentation\DTOs\NovaPasta\**" />
+    <None Remove="Presentation\DTOs\NovaPasta1\**" />
+    <None Remove="Presentation\DTOs\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
@@ -18,9 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StartiApi.Application\Starti.Application.csproj" />
-    <ProjectReference Include="..\StartiApi.Domain\Starti.Domain.csproj" />
     <ProjectReference Include="..\StartiApi.Infrastructure\Starti.Infrastructure.csproj" />
-    <ProjectReference Include="..\StartiApi.Persistence\Starti.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

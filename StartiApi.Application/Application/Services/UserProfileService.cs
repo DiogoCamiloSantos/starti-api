@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using StartiApi.Domain.Domain.Entities;
-using StartiApi.Repositories;
+using Starti.Domain.Entities;
+using StartiApi.Repositories.Interfaces;
 
 namespace StartiApi.Services
 {
-    public class UserProfileService : IUserProfileService
+    internal class UserProfileService : IUserProfileService
     {
         private readonly IUserProfileRepository _userProfileRepository;
 
