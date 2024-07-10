@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Starti.Domain.Entities;
 
-namespace StartiApi.Presentation.Controllers
+namespace Starti.Presentation.Controllers
 {
     [Route("api/app/auth")]
     [ApiController]

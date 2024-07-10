@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Starti.Domain.Entities;
 
-namespace StartiApi.Repositories.Interfaces
+namespace Starti.Repositories.Interfaces
 {
     public interface IUserProfileRepository
     {

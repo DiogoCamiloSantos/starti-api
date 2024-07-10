@@ -1,10 +1,7 @@
 using Microsoft.Extensions.Configuration;
-using Starti.Application.Application.Services.interfaces;
-using System;
-using System.Security.Claims;
-using System.Text;
+using Starti.Application.Services.interfaces;
 
-namespace StartiApi.Application.Services
+namespace Starti.Application.Services
 {
     internal class AuthenticationService : IAuthenticationService
     {

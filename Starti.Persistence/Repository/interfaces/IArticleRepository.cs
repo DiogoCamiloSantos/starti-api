@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Starti.Domain.Entities;
 
-namespace StartiApi.Repositories.Interfaces
+namespace Starti.Repositories.Interfaces
 {
     public interface IArticleRepository
     {

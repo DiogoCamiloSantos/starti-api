@@ -1,7 +1,10 @@
 using Starti.Domain.Entities;
 
-public interface IArticleService
+namespace Starti.Application.Services.interfaces
 {
-    Task<IEnumerable<Article>> GetAllAsync();
-    Task AddManyAsync(IEnumerable<Article> articles);
+    public interface IArticleService
+    {
+        Task<IEnumerable<Article>> GetAllAsync();
+        Task AddManyAsync(IEnumerable<Article> articles);
+    }
 }

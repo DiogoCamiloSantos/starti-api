@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Starti.Domain.Entities;
-using StartiApi.Repositories.Interfaces;
+using Starti.Repositories.Interfaces;
 
-namespace StartiApi.Repositories
+namespace Starti.Persistence.Repositories
 {
     internal class UserProfileRepository : IUserProfileRepository
     {

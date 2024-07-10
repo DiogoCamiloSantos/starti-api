@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Reflection;
-using StartiApi.Application.Registration;
+using Starti.Application.Registration;
 
 var builder = WebApplication.CreateBuilder(args);
 

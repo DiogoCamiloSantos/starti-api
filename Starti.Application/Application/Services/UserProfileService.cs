@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+using Starti.Application.Services.Interfaces;
 using Starti.Domain.Entities;
-using StartiApi.Repositories.Interfaces;
+using Starti.Repositories.Interfaces;
 
-namespace StartiApi.Services
+namespace Starti.Services
 {
     internal class UserProfileService : IUserProfileService
     {

@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using Starti.Domain.Entities;
 
-namespace StartiApi.Services
+namespace Starti.Application.Services.Interfaces
 {
     public interface IUserProfileService
     {

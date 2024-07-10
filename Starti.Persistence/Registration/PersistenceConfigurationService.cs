@@ -3,10 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Starti.Persistence.Data;
 using Starti.Persistence.Data.Interfaces;
-using StartiApi.Repositories.Interfaces;
 using Starti.Persistence.Repositories;
+using Starti.Repositories.Interfaces;
 
-namespace StartiApi.Persistence.Registration
+namespace Starti.Persistence.Registration
 {
     public static class PersistenceConfigurationService
     {
@@ -25,6 +25,7 @@ namespace StartiApi.Persistence.Registration
             });
 
             services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IUserProfileRepository, UserProfileRepository>();
         }
     }
 }

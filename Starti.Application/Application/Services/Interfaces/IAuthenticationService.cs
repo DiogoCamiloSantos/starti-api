@@ -1,4 +1,4 @@
-namespace Starti.Application.Application.Services.interfaces
+namespace Starti.Application.Services.interfaces
 {
     public interface IAuthenticationService
     {

@@ -1,25 +1,27 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Starti.Application.Services.interfaces;
 using Starti.Domain.Entities;
-using StartiApi.Repositories;
-using StartiApi.Repositories.Interfaces;
+using Starti.Repositories.Interfaces;
 
-public class ArticleService : IArticleService
+namespace Starti.Application.Services
 {
-    internal readonly IArticleRepository articleRepository;
-
-    public ArticleService(IArticleRepository articleRepository)
+    public class ArticleService : IArticleService
     {
-        this.articleRepository = articleRepository;
+        internal readonly IArticleRepository articleRepository;
+
+        public ArticleService(IArticleRepository articleRepository)
+        {
+            this.articleRepository = articleRepository;
+        }
+
+        public Task AddManyAsync(IEnumerable<Article> articles)
+        {
+            return articleRepository.AddManyAsync(articles);
+        }
+
+        public Task<IEnumerable<Article>> GetAllAsync()
+        {
+            return articleRepository.GetAllAsync();
+        }
     }
 
-    public Task AddManyAsync(IEnumerable<Article> articles)
-    {
-        return articleRepository.AddManyAsync(articles);
-    }
-
-    public Task<IEnumerable<Article>> GetAllAsync()
-    {
-        return articleRepository.GetAllAsync();
-    }
 }

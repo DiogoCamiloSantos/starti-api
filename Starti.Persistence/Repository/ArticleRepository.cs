@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Starti.Domain.Entities;
 using Starti.Persistence.Data;
-using StartiApi.Repositories.Interfaces;
+using Starti.Repositories.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

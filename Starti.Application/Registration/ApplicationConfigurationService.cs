@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StartiApi.Persistence.Registration;
+using Starti.Application.Services;
+using Starti.Application.Services.interfaces;
+using Starti.Application.Services.Interfaces;
+using Starti.Persistence.Registration;
+using Starti.Services;
 
-namespace StartiApi.Application.Registration
+namespace Starti.Application.Registration
 {
     public static class ApplicationConfigurationService
     {
@@ -11,6 +14,7 @@ namespace StartiApi.Application.Registration
         {
             services.AddPersistenceConfiguration(configuration);
             services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IUserProfileService, UserProfileService>();
         }
     }
 }

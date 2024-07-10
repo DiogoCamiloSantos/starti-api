@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StartiApi.Services;
+using Starti.Services;
 using Starti.WebApi.Presentation.DTOs.UserProfile;
 using Starti.Domain.Entities;
+using Starti.Application.Services.Interfaces;
 
-namespace StartiApi.Controllers
+namespace Starti.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
