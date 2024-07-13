@@ -22,6 +22,10 @@ namespace Starti.Application.Services
         {
             return articleRepository.GetAllAsync();
         }
-    }
 
+        public async Task<IEnumerable<Article>> SearchAsync(string searchTerm)
+        {
+            return await articleRepository.GetByAsync(searchTerm);
+        }
+    }
 }

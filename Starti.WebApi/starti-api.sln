@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "starti-api", "starti-api.csproj", "{51E67FE8-6D12-4B1B-A896-B650A965EF02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "starti-api", "Starti.WebApi.csproj", "{51E67FE8-6D12-4B1B-A896-B650A965EF02}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartiApi.Domain", "..\StartiApi.Domain\StartiApi.Domain.csproj", "{581EBEFB-7071-4B23-8D6E-2B4C92FDDDA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starti.Domain", "..\Starti.Domain\Starti.Domain.csproj", "{581EBEFB-7071-4B23-8D6E-2B4C92FDDDA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartiApi.Infrastructure", "..\StartiApi.Infrastructure\StartiApi.Infrastructure.csproj", "{06B70CF7-AAA5-462D-9457-CD86F1940E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starti.Infrastructure", "..\Starti.Infrastructure\Starti.Infrastructure.csproj", "{06B70CF7-AAA5-462D-9457-CD86F1940E21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartiApi.Persistence", "..\StartiApi.Persistence\StartiApi.Persistence.csproj", "{F82D32B8-0EF9-452A-BFAA-62637537E22A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starti.Persistence", "..\Starti.Persistence\Starti.Persistence.csproj", "{F82D32B8-0EF9-452A-BFAA-62637537E22A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartiApi.Application", "..\StartiApi.Application\StartiApi.Application.csproj", "{CC4787DB-7A33-4ED2-801D-D0F233E510A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starti.Application", "..\Starti.Application\Starti.Application.csproj", "{CC4787DB-7A33-4ED2-801D-D0F233E510A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +39,10 @@ Global
 		{CC4787DB-7A33-4ED2-801D-D0F233E510A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC4787DB-7A33-4ED2-801D-D0F233E510A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC4787DB-7A33-4ED2-801D-D0F233E510A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A510BF73-842E-41E2-9AD4-435FA215C3CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A510BF73-842E-41E2-9AD4-435FA215C3CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A510BF73-842E-41E2-9AD4-435FA215C3CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A510BF73-842E-41E2-9AD4-435FA215C3CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,5 +12,6 @@ namespace Starti.Repositories.Interfaces
         Task UpdateArticleAsync(Article article);
         Task DeleteArticleAsync(int id);
         Task AddManyAsync(IEnumerable<Article> articles);
+        Task<IEnumerable<Article>> GetByAsync(string searchTerm);
     }
 }

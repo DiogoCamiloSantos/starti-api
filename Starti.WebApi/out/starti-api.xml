@@ -4,7 +4,7 @@
         <name>starti-api</name>
     </assembly>
     <members>
-        <member name="M:StartiApi.Presentation.Controllers.AuthSiteController.Login(UserModel)">
+        <member name="M:Starti.Presentation.Controllers.AuthSiteController.Login(UserModel)">
             <summary>
             Login pelo site.
             </summary>

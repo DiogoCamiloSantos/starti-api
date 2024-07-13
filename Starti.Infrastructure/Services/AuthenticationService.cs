@@ -8,17 +8,17 @@ using System.IdentityModel.Tokens.Jwt;
 
 public class AuthenticationService : IAuthenticationService
 {
-    private readonly IConfiguration _config;
+    private readonly IConfiguration config;
 
     public AuthenticationService(IConfiguration config)
     {
-        _config = config;
+        this.config = config;
     }
 
     public string GenerateToken(string username, string client)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
+        var key = Encoding.ASCII.GetBytes(config["Jwt:Key"]);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new[]

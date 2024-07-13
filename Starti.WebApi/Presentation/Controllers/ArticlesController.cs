@@ -27,4 +27,11 @@ public class ArticlesController : ControllerBase
         await articleService.AddManyAsync(articles.Select(article => ArticlePresenter.FromDto(article)));
         return Ok();
     }
+
+    [HttpPost("search")]
+    public async Task<ActionResult<IEnumerable<Object>>> SearchArticles([FromBody] ArticleSearchDTO articleSearch)
+    {
+        var articles = await articleService.SearchAsync(articleSearch.search);
+        return Ok(articles);
+    }
 }

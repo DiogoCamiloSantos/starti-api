@@ -53,5 +53,13 @@ namespace Starti.Persistence.Repositories
             await context.Articles.AddRangeAsync(articles);
             context.SaveChanges();
         }
+
+        public async Task<IEnumerable<Article>> GetByAsync(string searchTerm)
+        {
+            return await context.Articles
+                .Where(a => EF.Functions.Like(a.Title.ToLower(), $"%{searchTerm.ToLower()}%") ||
+                            EF.Functions.Like(a.Content.ToLower(), $"%{searchTerm.ToLower()}%"))
+                .ToListAsync();
+        }
     }
 }
